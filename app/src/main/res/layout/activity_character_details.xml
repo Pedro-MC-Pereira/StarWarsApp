@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvnameTagDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_tvTagTitle"
+        android:layout_marginTop="20dp"
+        android:layout_toStartOf="@+id/id_tvTagTitle"
+        android:text="Name: "
+        android:textColor="#616161"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_genderTagDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tvnameTagDetails"
+        android:layout_below="@+id/tvnameTagDetails"
+        android:layout_marginTop="32dp"
+        android:textColor="#616161"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Gender: " />
+
+    <TextView
+        android:id="@+id/tv_planetTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_genderTagDetails"
+        android:layout_below="@+id/tv_genderTagDetails"
+        android:layout_marginTop="30dp"
+        android:textColor="#616161"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Homeworld: " />
+
+    <TextView
+        android:id="@+id/tv_tagSkinColorDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_planetTag"
+        android:layout_below="@+id/tv_planetTag"
+        android:layout_marginTop="29dp"
+        android:textColor="#616161"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Skin Color: " />
+
+    <TextView
+        android:id="@+id/tv_tagVehiclesDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tv_tagSkinColorDetails"
+        android:layout_below="@+id/tv_tagSkinColorDetails"
+        android:layout_marginTop="28dp"
+        android:textColor="#616161"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Vehicles: " />
+
+    <TextView
+        android:id="@+id/id_tvNameDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvnameTagDetails"
+        android:layout_alignBottom="@+id/tvnameTagDetails"
+        android:layout_alignStart="@+id/id_tvTagTitle"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/id_tvGenderDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_genderTagDetails"
+        android:layout_alignBottom="@+id/tv_genderTagDetails"
+        android:layout_toEndOf="@+id/tv_genderTagDetails"
+        android:text="Gender" />
+
+    <TextView
+        android:id="@+id/id_tvHomeworldDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_planetTag"
+        android:layout_alignBottom="@+id/tv_planetTag"
+        android:layout_toEndOf="@+id/tv_planetTag"
+        android:text="Homeworld" />
+
+    <TextView
+        android:id="@+id/id_tvSkincolorDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_tagSkinColorDetails"
+        android:layout_alignBottom="@+id/tv_tagSkinColorDetails"
+        android:layout_toEndOf="@+id/tv_tagSkinColorDetails"
+        android:text="SkinColor" />
+
+    <TextView
+        android:id="@+id/id_tvVehiclesDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_tagVehiclesDetails"
+        android:layout_alignBottom="@+id/tv_tagVehiclesDetails"
+        android:layout_toEndOf="@+id/tv_tagVehiclesDetails"
+        android:text="Vehicles" />
+
+    <TextView
+        android:id="@+id/id_tvTagTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text="Character Details"
+        android:textColor="#616161"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

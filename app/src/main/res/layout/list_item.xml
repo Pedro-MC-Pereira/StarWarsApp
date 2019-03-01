@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    card_view:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:baselineAligned="false"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/id_tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Name"
+            android:textColor="#616161"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/id_tvSpecie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_tvName"
+            android:layout_marginTop="11dp"
+            android:layout_toEndOf="@+id/specieTag"
+            android:text="No Specie"
+            android:textColor="#616161"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/id_tvNVehicles"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/nVehiclesTag"
+            android:layout_toEndOf="@+id/nVehiclesTag"
+            android:text="Vehicles"
+            android:textColor="#616161"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/specieTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/nVehiclesTag"
+            android:layout_alignParentStart="true"
+            android:text="Specie: "
+            android:textColor="#616161"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nVehiclesTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/id_tvSpecie"
+            android:layout_marginTop="13dp"
+            android:text="Nº Vehicles: "
+            android:textColor="#616161"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
