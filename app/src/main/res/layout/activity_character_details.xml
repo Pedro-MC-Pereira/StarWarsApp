@@ -121,4 +121,23 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/tvSearchTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tagVehiclesDetails"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:text="Get more information from Google"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/id_btnGoogleSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSearchTag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:text="Go!" />
+
 </RelativeLayout>
