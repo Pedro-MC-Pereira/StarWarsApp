@@ -62,13 +62,13 @@ class CharactersAdpater (val context: Context, val charactersList: MutableList<C
                             intent.putExtra("charPlanet", planetName)
                             intent.putExtra("charSkinColor", currentCharacter!!.skin_color)
 
-                            var vechilesString: String = ""
+                            var vehiclesString: String = ""
                             if(currentCharacter!!.vehicles.count() > 0) {
                                 for(x in 0 until (currentCharacter!!.vehicles.count()))
                                 {
-                                    vechilesString = currentCharacter!!.vehicles[x].name + " \n " + vechilesString
+                                    vehiclesString = currentCharacter!!.vehicles[x].name + " \n " + vehiclesString
                                 }
-                                intent.putExtra("charVehicles", vechilesString)
+                                intent.putExtra("charVehicles", vehiclesString)
                             }
                             else{
                                 intent.putExtra("charVehicles", "None")
