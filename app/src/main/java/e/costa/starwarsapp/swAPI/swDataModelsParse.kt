@@ -21,3 +21,5 @@ data class Person(val name: String,
 data class Specie(val name: String)
 
 data class Vehicle(val name: String)
+
+data class HomeWorld(val name: String)

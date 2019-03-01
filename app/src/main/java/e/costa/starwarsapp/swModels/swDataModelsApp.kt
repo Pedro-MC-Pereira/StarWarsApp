@@ -21,3 +21,5 @@ data class VehicleApp (val name: String){
         return "${name}"
     }
 }
+
+data class HomeWorld(val name: String)

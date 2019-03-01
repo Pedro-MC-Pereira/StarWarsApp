@@ -78,9 +78,12 @@ class  SWapiInit{
     }
 
     //get homeworld name
-    fun loadCharactersHome(i: Int) : Observable<Character>{
-        return service.getCharactersByPage(i)
-                .flatMap { charactersResult -> Observable.fromIterable(charactersResult.results)}
+    fun loadCharactersHome(s: String) : Observable<HomeWorld>{
+        return service.getHomeworld(Uri.parse(s).lastPathSegment)
+
+
+
+                /*
                 .flatMap { character ->
                     Observable.zip(
                             Observable.just(Character(character.name,
@@ -101,6 +104,7 @@ class  SWapiInit{
                                 finalChar
                             })
                 }
+                */
 
 
     }

@@ -7,8 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import e.costa.starwarsapp.swAPI.SWapiInit
 import e.costa.starwarsapp.swModels.Character
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.list_item.view.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.indeterminateProgressDialog
 
 /**
  * Created by costa on 28/02/2019.
@@ -35,29 +40,50 @@ class CharactersAdpater (val context: Context, val charactersList: MutableList<C
 
         var currentCharacter: Character? = null
         var currentPosition: Int = 0
-
+        var planetName: String = ""
         //define which values to pass on item click
         init{
             itemView.setOnClickListener{
-                //Toast.makeText(context, currentCharacter!!.name + "clicked", Toast.LENGTH_SHORT).show()
-                val intent = Intent(itemView.context, CharacterDetailsActivity::class.java)
-                intent.putExtra("charName", currentCharacter!!.name)
-                intent.putExtra("charGender", currentCharacter!!.gender)
-                intent.putExtra("charPlanet", currentCharacter!!.homeworld)
-                intent.putExtra("charSkinColor", currentCharacter!!.skin_color)
+                val dialog = context.indeterminateProgressDialog("Getting details!")
+                dialog.show()
+                val api1 = SWapiInit();
+                api1.loadCharactersHome(currentCharacter!!.homeworld) //get characters number
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({ homeworldResult ->
+                            planetName = homeworldResult.name
 
-                var vechilesString: String = ""
-                if(currentCharacter!!.vehicles.count() > 0) {
-                    for(x in 0 until (currentCharacter!!.vehicles.count()))
-                    {
-                        vechilesString = currentCharacter!!.vehicles[x].name + " \n " + vechilesString
-                    }
-                    intent.putExtra("charVehicles", vechilesString)
-                }
-                else{
-                    intent.putExtra("charVehicles", "None")
-                }
-                itemView.context.startActivity(intent)
+                            val intent = Intent(itemView.context, CharacterDetailsActivity::class.java)
+                            intent.putExtra("charName", currentCharacter!!.name)
+                            intent.putExtra("charGender", currentCharacter!!.gender)
+                            if(planetName == ""){
+                                planetName = "No planet"
+                            }
+                            intent.putExtra("charPlanet", planetName)
+                            intent.putExtra("charSkinColor", currentCharacter!!.skin_color)
+
+                            var vechilesString: String = ""
+                            if(currentCharacter!!.vehicles.count() > 0) {
+                                for(x in 0 until (currentCharacter!!.vehicles.count()))
+                                {
+                                    vechilesString = currentCharacter!!.vehicles[x].name + " \n " + vechilesString
+                                }
+                                intent.putExtra("charVehicles", vechilesString)
+                            }
+                            else{
+                                intent.putExtra("charVehicles", "None")
+                            }
+
+                            dialog.dismiss()
+                            itemView.context.startActivity(intent)
+                        }, { e ->
+                            e.printStackTrace()
+                        }, {
+                        }
+                        )
+
+                //Toast.makeText(context, currentCharacter!!.name + "clicked", Toast.LENGTH_SHORT).show()
+
             }
         }
 

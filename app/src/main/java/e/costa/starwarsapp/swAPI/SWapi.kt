@@ -25,7 +25,7 @@ interface SWapi {
     fun getVehicles(@Path("vehicleID") vehicleID : String) : Observable<Vehicle>
 
     @GET("planets/{planetID}") //get planet (homeworld) by planet number
-    fun getHomeworld(@Path("planetID") planetID : String) : Observable<String>
+    fun getHomeworld(@Path("planetID") planetID : String) : Observable<HomeWorld>
 
 
 }
